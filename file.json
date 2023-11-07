@@ -1,10 +1,1 @@
-{
-    "BaseModel.8ae0a7c7-710a-4882-8106-ebd18ec9ffe0": {
-        "id": "8ae0a7c7-710a-4882-8106-ebd18ec9ffe0",
-        "created_at": "2023-11-07T16:43:45.193230",
-        "updated_at": "2023-11-07T16:43:45.193240",
-        "name": "My_First_Model",
-        "my_number": 89,
-        "__class__": "BaseModel"
-    }
-}
+{"BaseModel.8bf5cfd0-d6df-4960-bbf0-248833fbb36a": {"id": "8bf5cfd0-d6df-4960-bbf0-248833fbb36a", "created_at": "2023-11-07T19:43:10.339030", "updated_at": "2023-11-07T19:43:10.339074", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}, "BaseModel.fa1f972f-04f4-4352-8263-368c13660ad1": {"id": "fa1f972f-04f4-4352-8263-368c13660ad1", "created_at": "2023-11-07T19:45:48.304978", "updated_at": "2023-11-07T19:45:48.304987", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}, "BaseModel.de5ddacf-9251-4c76-93f2-ae79e7b054d8": {"id": "de5ddacf-9251-4c76-93f2-ae79e7b054d8", "created_at": "2023-11-07T19:45:49.936330", "updated_at": "2023-11-07T19:45:49.936337", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}, "BaseModel.75146e87-a1a9-4a03-ad16-1f1c6b91f03c": {"id": "75146e87-a1a9-4a03-ad16-1f1c6b91f03c", "created_at": "2023-11-07T19:45:54.585263", "updated_at": "2023-11-07T19:45:54.585270", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}, "BaseModel.d0c7a120-7409-490e-9dca-27175a4d0a54": {"id": "d0c7a120-7409-490e-9dca-27175a4d0a54", "created_at": "2023-11-07T20:18:50.784712", "updated_at": "2023-11-07T20:18:50.784723", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}, "BaseModel.d75de132-5249-4aef-82f7-daf4a1683ccf": {"id": "d75de132-5249-4aef-82f7-daf4a1683ccf", "created_at": "2023-11-07T20:18:55.566771", "updated_at": "2023-11-07T20:18:55.566784", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}}
