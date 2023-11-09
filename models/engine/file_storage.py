@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""This module implements the FileStorage class"""
+
 import json
 import uuid
 # from models.base_model import BaseModel
@@ -11,13 +13,16 @@ class FileStorage():
     __objects = {}
     
     def all(self):
+        """Returns the dictionary of objects"""
         return FileStorage.__objects
     
     def new(self, obj):
+        """Adds a new object to the dictionary""" 
         key = "{}.{}".format(obj.__class__.__name__,obj.id)
         FileStorage.__objects[key] = obj
     
     def save(self):
+        """Serializes objects and saves them to a JSON file"""
         json_object = {}
         
         for key in FileStorage.__objects:
@@ -27,6 +32,7 @@ class FileStorage():
             json.dump(json_object, f)
 
     def reload(self):
+        """Deserializes objects from a JSON file and loads them into the dictionary"""
         try:
             with open(FileStorage.__file_path, 'r') as f:
                 dict_obj = json.load(f)

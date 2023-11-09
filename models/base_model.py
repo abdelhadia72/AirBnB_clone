@@ -1,17 +1,20 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
 
 import uuid
 from datetime import datetime
 from models import storage
 
+
 class BaseModel():
     def __init__(self, *args, **kwargs):
         '''Initializes instances'''
+        sformat = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key in ('created_at', 'updated_at'):
-                        value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                        value = datetime.strptime(value, sformat)
                     setattr(self, key, value)
             self.id = kwargs.get('id')
         else:
@@ -19,15 +22,18 @@ class BaseModel():
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
         storage.new(self)
-    
+
     def __str__(self):
         '''string representation of the object'''
-        return ("[{}] ({}) ({})".format(self.__class__.__name__, self.id, self.__dict__))
-        
+        class_name = self.__class__.__name__
+        dicts = self.__dict__
+        id = self.id
+        return ("[{}] ({}) ({})".format(class_name, id, dicts))
+
     def save(self):
         '''Updates the "updated_at" attribute with the current time'''
         self.updated_at = datetime.now()
-        
+
     def to_dict(self):
         '''Converts the object's attributes to a dictionary'''
         dict = self.__dict__.copy()
@@ -35,7 +41,6 @@ class BaseModel():
         dict['created_at'] = self.created_at.isoformat()
         dict['updated_at'] = self.updated_at.isoformat()
         return (dict)
-        
 
     def save(self):
         """ updates with the current datetime """
