@@ -3,6 +3,11 @@
 """ The console """
 
 from models.base_model import BaseModel
+from models.user import User
+from models.city import City 
+from models.place import Place 
+from models.state import State 
+from models.amenity import Amenitys 
 from models import storage
 import models
 import cmd
@@ -13,34 +18,56 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     
     def do_EOF(self, arg):
-        """Exit command to exit the program"""
-        print("")
+        '''
+        Exit command to exit the program
+        '''
         return True
 
     def do_quit(self, arg):
-        """Quit command to exit the program"""
+        '''
+        Quit command to exit the program
+        using : quit
+        '''
         return True
+    
+    # def do_create(self, arg):
+    #     '''
+    #     Creates a new instance of BaseModel
+    #     using : creates <class name>
+    #     '''
+    #     if not arg:
+    #         print("** class name missing **")
+    #     # elif  arg != BaseModel.__name__:
+    #     elif arg not in globals():
+    #         print("** class doesn't exist **")
+    #     else:
+    #         new_instance = BaseModel()
+    #         new_instance.save()
+    #         print(new_instance.id)
     
     def do_create(self, arg):
         '''
         Creates a new instance of BaseModel
-        using : destroy <class name>
+        using : creates <class name>
         '''
         if not arg:
             print("** class name missing **")
-        elif  arg != BaseModel.__name__:
+        # elif  arg != BaseModel.__name__:
+        elif arg not in globals():
             print("** class doesn't exist **")
         else:
-            new_instance = BaseModel()
+            new_instance = globals()[arg]()
             new_instance.save()
             print(new_instance.id)
         
+    
     def do_show(self, arg):
         '''
-        Prints the string representation of an instance based on the class name and id
-        using : destroy <class name> <id>
-        
+        Prints the string representation of an 
+        instance based on the class name and id
+        using : show <class name> <id>
         '''
+        
         if len(arg) == 0:
             print("** class name missing **")
         else:
@@ -81,8 +108,11 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
     
     def do_all(self, arg):
-        ''' all Prints all string representation of all instances based or not on the class name and id
-        using : all or all <class name> <id>'''
+        '''
+        all Prints all string representation of all instances
+        based or not on the class name and id
+        using : all or all <class name> <id>
+        '''
         parts = arg.split()
         if len(parts) < 1:
             print(storage.all())
@@ -94,8 +124,10 @@ class HBNBCommand(cmd.Cmd):
                 print(storage.all())
         
     def do_update(self, args):
-        ''' Updates an instance based on the class name
-            using : update <class name> <id> <attribute name> "<attribute value>"'''
+        '''
+            Updates an instance based on the class name
+            using : update <class name> <id> <attribute name> "<attribute value>
+        '''
         vargs = args.split()
         
         if len(vargs) < 1:
@@ -116,7 +148,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 obj = storage.all()[key]
-                setattr(obj, vargs[2], eval(vargs[3]))
+                setattr(obj, vargs[2], vargs[3])
 
     # def do_ma(self, args):
     #     print("Globals :",globals())
