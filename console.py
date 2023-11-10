@@ -7,7 +7,7 @@ from models.user import User
 from models.city import City 
 from models.place import Place 
 from models.state import State 
-from models.amenity import Amenitys 
+from models.amenity import Amenity
 from models import storage
 import models
 import cmd
@@ -121,7 +121,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 #* add the class that you want to print 
-                print(storage.all())
+                for key in storage.all():
+                    if arg == key.split('.')[0]:
+                        print(storage.all()[key])
         
     def do_update(self, args):
         '''
