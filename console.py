@@ -104,6 +104,7 @@ class HBNBCommand(cmd.Cmd):
                 key = f"{class_name}.{obj_id}"
                 if key in storage.all():
                     del storage.all()[key]
+                    storage.save()
                 else:
                     print("** no instance found **")
     
@@ -149,6 +150,9 @@ class HBNBCommand(cmd.Cmd):
             if key not in storage.all():
                 print("** no instance found **")
             else:
+                #! not update id or create
+                if vargs[2] in ("created_at", "updated_at", "id"):
+                    return 
                 obj = storage.all()[key]
                 setattr(obj, vargs[2], vargs[3])
 
