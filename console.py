@@ -30,21 +30,6 @@ class HBNBCommand(cmd.Cmd):
         '''
         return True
     
-    # def do_create(self, arg):
-    #     '''
-    #     Creates a new instance of BaseModel
-    #     using : creates <class name>
-    #     '''
-    #     if not arg:
-    #         print("** class name missing **")
-    #     # elif  arg != BaseModel.__name__:
-    #     elif arg not in globals():
-    #         print("** class doesn't exist **")
-    #     else:
-    #         new_instance = BaseModel()
-    #         new_instance.save()
-    #         print(new_instance.id)
-    
     def do_create(self, arg):
         '''
         Creates a new instance of BaseModel
@@ -121,7 +106,6 @@ class HBNBCommand(cmd.Cmd):
             if parts[0] not in globals():
                 print("** class doesn't exist **")
             else:
-                #* add the class that you want to print 
                 for key in storage.all():
                     if arg == key.split('.')[0]:
                         print(storage.all()[key])
@@ -150,21 +134,11 @@ class HBNBCommand(cmd.Cmd):
             if key not in storage.all():
                 print("** no instance found **")
             else:
-                #! not update id or create
                 if vargs[2] in ("created_at", "updated_at", "id"):
+                    print("** You can't change (created_at, updated_at, id) **")
                     return 
                 obj = storage.all()[key]
                 setattr(obj, vargs[2], vargs[3])
-
-    # def do_ma(self, args):
-    #     print("Globals :",globals())
-    #     print("--------")
-    #     print("Subclasses :", BaseModel.__subclasses__())
-    #     print("--------")
-    #     print("Name :",BaseModel.__name__)
-    #     print("--------")
-    #     print("Modle :", models.__dict__)
-#$ update BaseModel 1234-1234-1234 email "aibnb@mail.com"
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
