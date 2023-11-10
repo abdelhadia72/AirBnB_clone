@@ -4,9 +4,9 @@
 
 from models.base_model import BaseModel
 from models.user import User
-from models.city import City 
-from models.place import Place 
-from models.state import State 
+from models.city import City
+from models.place import Place
+from models.state import State
 from models.amenity import Amenity
 from models import storage
 import models
@@ -16,7 +16,7 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     intro = "Welcome to Airbnb console. type 'help' for more info."
     prompt = "(hbnb) "
-    
+
     def do_EOF(self, arg):
         '''
         Exit command to exit the program
@@ -29,7 +29,7 @@ class HBNBCommand(cmd.Cmd):
         using : quit
         '''
         return True
-    
+
     def do_create(self, arg):
         '''
         Creates a new instance of BaseModel
@@ -44,15 +44,14 @@ class HBNBCommand(cmd.Cmd):
             new_instance = globals()[arg]()
             new_instance.save()
             print(new_instance.id)
-        
-    
+
     def do_show(self, arg):
         '''
-        Prints the string representation of an 
+        Prints the string representation of an
         instance based on the class name and id
         using : show <class name> <id>
         '''
-        
+
         if len(arg) == 0:
             print("** class name missing **")
         else:
@@ -92,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
                 else:
                     print("** no instance found **")
-    
+
     def do_all(self, arg):
         '''
         all Prints all string representation of all instances
@@ -109,14 +108,15 @@ class HBNBCommand(cmd.Cmd):
                 for key in storage.all():
                     if arg == key.split('.')[0]:
                         print(storage.all()[key])
-        
+
     def do_update(self, args):
         '''
             Updates an instance based on the class name
-            using : update <class name> <id> <attribute name> "<attribute value>
+            using : update <class name> <id> \
+<attribute name> <attribute value>
         '''
         vargs = args.split()
-        
+
         if len(vargs) < 1:
             print("** class name missing **")
         elif vargs[0] not in globals():
@@ -135,10 +135,11 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 if vargs[2] in ("created_at", "updated_at", "id"):
-                    print("** You can't change (created_at, updated_at, id) **")
-                    return 
+                    print("** can't update **")
+                    return
                 obj = storage.all()[key]
                 setattr(obj, vargs[2], vargs[3])
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
