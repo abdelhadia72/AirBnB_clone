@@ -30,10 +30,6 @@ class BaseModel():
         id = self.id
         return ("[{}] ({}) ({})".format(class_name, id, dicts))
 
-    def save(self):
-        '''Updates the "updated_at" attribute with the current time'''
-        self.updated_at = datetime.now()
-
     def to_dict(self):
         '''Converts the object's attributes to a dictionary'''
         dict = self.__dict__.copy()
