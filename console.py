@@ -98,6 +98,7 @@ class HBNBCommand(cmd.Cmd):
         based or not on the class name and id
         using : all or all <class name> <id>
         '''
+        # all User
         parts = arg.split()
         if len(parts) < 1:
             print(storage.all())
@@ -106,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 for key in storage.all():
-                    if arg == key.split('.')[0]:
+                    if parts[0] == key.split('.')[0]:
                         print(storage.all()[key])
 
     def do_update(self, args):
@@ -140,6 +141,37 @@ class HBNBCommand(cmd.Cmd):
                 obj = storage.all()[key]
                 setattr(obj, vargs[2], vargs[3])
 
+    def do_counter(self, arg):
+        count = 0
+        for value in storage.all():
+            class_name = value.split(".")[0]
+            if  class_name == arg:
+                count += 1
+        return count
 
+    def default(self, arg):
+        '''
+        handle daynamic commands
+        using : <class name>.<method name>(<args>)
+        '''
+        try:
+            names, args = arg.strip(')').split('(')
+            class_name, method_name = names.split('.')
+            if (method_name == "count"):
+                print(self.do_counter(class_name))
+            else:
+                fun = f"do_{method_name}"
+                method_name = getattr(self, fun, None)
+
+                if len(args) == 0:
+                    method_name(class_name)
+                else:
+                    args = args.replace('"', "").replace(" ", "").replace(",", " ")
+                    args = f"{class_name} {args}"
+                    method_name(args)
+        except:
+            return
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
+
+
