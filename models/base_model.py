@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+''' Base module class'''
 
 import uuid
 from datetime import datetime
