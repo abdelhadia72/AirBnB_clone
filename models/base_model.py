@@ -7,6 +7,7 @@ from models import storage
 
 
 class BaseModel():
+    '''Defines methods for class to inherit from'''
     def __init__(self, *args, **kwargs):
         '''Initializes instances'''
         sformat = '%Y-%m-%dT%H:%M:%S.%f'
