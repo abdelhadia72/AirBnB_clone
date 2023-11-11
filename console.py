@@ -164,13 +164,11 @@ class HBNBCommand(cmd.Cmd):
                 method_name = getattr(self, fun, None)
                 if len(args) == 0:
                     method_name(class_name)
-                elif type(eval(args.split(",", 1)[1])) != dict:
+                else:
                     args = args.replace('"', "").replace(" ", "").replace(",", " ")
                     args = f"{class_name} {args}"
                     method_name(args)
-                    print("her")
-                else:
-                    print("Not Yet Dict")
+
         except:
             return
 if __name__ == "__main__":
