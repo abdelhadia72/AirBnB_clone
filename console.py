@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" The console """
+""" The console handle all commands for Hbnb"""
 
 from models.base_model import BaseModel
 from models.user import User
