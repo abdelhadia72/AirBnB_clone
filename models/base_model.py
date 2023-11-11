@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Base module class'''
+''' Base module class for class to inherit from'''
 
 import uuid
 from datetime import datetime
