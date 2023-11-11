@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 ''' Base module class'''
 
 import uuid
@@ -43,8 +43,3 @@ class BaseModel():
         """ updates with the current datetime """
         self.updated_at = datetime.now()
         storage.save()
-
-    def __repr__(self):
-        '''official string representation of the object'''
-        class_name = self.__class__.__name__
-        return f"{class_name}({self.__dict__})"
