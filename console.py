@@ -162,16 +162,21 @@ class HBNBCommand(cmd.Cmd):
             else:
                 fun = f"do_{method_name}"
                 method_name = getattr(self, fun, None)
-
                 if len(args) == 0:
                     method_name(class_name)
-                else:
+                elif type(eval(args.split(",", 1)[1])) != dict:
                     args = args.replace('"', "").replace(" ", "").replace(",", " ")
                     args = f"{class_name} {args}"
                     method_name(args)
+                    print("her")
+                else:
+                    print("Not Yet Dict")
         except:
             return
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
 
 
+#! TODO:
+# Check on the calss name if it exset
+# User.all("38f22813-2753-4d42-b37c-57a17f1e4f88", {'first_name': "John", "age": 89})
