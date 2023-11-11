@@ -18,6 +18,7 @@ class HBNBCommand(cmd.Cmd):
     intro = "Welcome to Airbnb console. type 'help' for more info."
     prompt = "(hbnb) "
 
+
     def do_EOF(self, arg):
         '''
         Exit command to exit the program
@@ -110,6 +111,9 @@ class HBNBCommand(cmd.Cmd):
                 for key in storage.all():
                     if parts[0] == key.split('.')[0]:
                         print(storage.all()[key])
+
+    def emptyline(self):
+        return False
 
     def do_update(self, args):
         '''
