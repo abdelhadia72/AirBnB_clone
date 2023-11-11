@@ -142,7 +142,7 @@ class HBNBCommand(cmd.Cmd):
                 obj = storage.all()[key]
                 setattr(obj, vargs[2], vargs[3])
 
-    def do_counter(self, arg):
+    def counter(self, arg):
         ''' count how many obj we have'''
         count = 0
         for value in storage.all():
@@ -160,7 +160,7 @@ class HBNBCommand(cmd.Cmd):
             names, args = arg.strip(')').split('(')
             class_name, method_name = names.split('.')
             if (method_name == "count"):
-                print(self.do_counter(class_name))
+                print(self.counter(class_name))
             else:
                 fun = f"do_{method_name}"
                 method_name = getattr(self, fun, None)
