@@ -142,6 +142,7 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, vargs[2], vargs[3])
 
     def do_counter(self, arg):
+        ''' count how many obj we have'''
         count = 0
         for value in storage.all():
             class_name = value.split(".")[0]
@@ -177,4 +178,5 @@ if __name__ == "__main__":
 
 #! TODO:
 # Check on the calss name if it exset
+# Target the dict name and deal with it in the else 
 # User.all("38f22813-2753-4d42-b37c-57a17f1e4f88", {'first_name': "John", "age": 89})
