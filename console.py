@@ -146,7 +146,7 @@ class HBNBCommand(cmd.Cmd):
         count = 0
         for value in storage.all():
             class_name = value.split(".")[0]
-            if  class_name == arg:
+            if class_name == arg:
                 count += 1
         return count
 
@@ -166,17 +166,21 @@ class HBNBCommand(cmd.Cmd):
                 if len(args) == 0:
                     method_name(class_name)
                 else:
-                    args = args.replace('"', "").replace(" ", "").replace(",", " ")
+                    args = args.replace('"', "")
+                    args = args.replace(" ", "")
+                    args = args.replace(",", " ")
                     args = f"{class_name} {args}"
                     method_name(args)
-
-        except:
+        except Exception:
             return
+
+
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
 
 
-#! TODO:
+# TODO
 # Check on the calss name if it exset
-# Target the dict name and deal with it in the else 
-# User.all("38f22813-2753-4d42-b37c-57a17f1e4f88", {'first_name': "John", "age": 89})
+# Target the dict name and deal with it in the else
+# User.all("38f22813-2753-4d42-b37c-57a17f1e4f88"
+# , {'first_name': "John", "age": 89})
