@@ -5,6 +5,7 @@ import unittest
 from models.base_model import BaseModel
 from models.city import City
 
+
 class TestCity(unittest.TestCase):
     """Test the City class"""
 
@@ -27,6 +28,7 @@ class TestCity(unittest.TestCase):
     def test_inheritance(self):
         """Test that City class inherits from BaseModel"""
         self.assertTrue(issubclass(City, BaseModel))
+
 
 if __name__ == '__main__':
     unittest.main()

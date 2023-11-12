@@ -5,6 +5,7 @@ import unittest
 from models.amenity import Amenity
 from models.base_model import BaseModel
 
+
 class TestAmenity(unittest.TestCase):
     """Test the Amenity class"""
 
@@ -23,6 +24,7 @@ class TestAmenity(unittest.TestCase):
     def test_inheritance(self):
         """Test that Amenity class inherits from BaseModel"""
         self.assertTrue(issubclass(Amenity, BaseModel))
+
 
 if __name__ == '__main__':
     unittest.main()

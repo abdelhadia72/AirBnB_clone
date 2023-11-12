@@ -35,5 +35,6 @@ class TestPlace(unittest.TestCase):
         """Test that Place class inherits from BaseModel"""
         self.assertTrue(issubclass(Place, BaseModel))
 
+
 if __name__ == '__main__':
     unittest.main()

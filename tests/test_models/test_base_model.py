@@ -21,7 +21,11 @@ class TestBaseModel(unittest.TestCase):
 
     def test_init_with_args(self):
         """Test initialization with arguments"""
-        model = BaseModel(id="1234", created_at="2022-01-01T12:00:00.000000", updated_at="2022-01-01T12:00:00.000000")
+        model = BaseModel(
+            id="1234",
+            created_at="2022-01-01T12:00:00.000000",
+            updated_at="2022-01-01T12:00:00.000000"
+        )
         self.assertEqual(model.id, "1234")
         self.assertEqual(model.created_at, datetime(2022, 1, 1, 12))
         self.assertEqual(model.updated_at, datetime(2022, 1, 1, 12))
@@ -37,8 +41,10 @@ class TestBaseModel(unittest.TestCase):
         model_dict = self.model.to_dict()
         self.assertEqual(model_dict["__class__"], "BaseModel")
         self.assertEqual(model_dict["id"], self.model.id)
-        self.assertEqual(model_dict["created_at"], self.model.created_at.isoformat())
-        self.assertEqual(model_dict["updated_at"], self.model.updated_at.isoformat())
+        ct = model_dict["created_at"]
+        md = model_dict["updated_at"]
+        self.assertEqual(ct, self.model.created_at.isoformat())
+        self.assertEqual(md, self.model.updated_at.isoformat())
 
     def test_save(self):
         """Test saving the model"""
@@ -74,6 +80,7 @@ class TestBaseModel(unittest.TestCase):
         old_created_at = self.model.created_at
         self.model.save()
         self.assertEqual(self.model.created_at, old_created_at)
+
 
 if __name__ == '__main__':
     unittest.main()

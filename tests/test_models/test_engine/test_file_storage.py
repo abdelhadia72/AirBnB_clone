@@ -94,5 +94,6 @@ class TestFileStorage(unittest.TestCase):
         new_objects = self.storage.all()
         self.assertEqual(old_objects, new_objects)
 
+
 if __name__ == '__main__':
     unittest.main()

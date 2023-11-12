@@ -39,7 +39,6 @@ class TestUser(unittest.TestCase):
         """Test User inheritance from BaseModel"""
         self.assertTrue(issubclass(User, BaseModel))
 
-
     def test_type_attributes(self):
         """Test type of User attributes"""
         self.assertIsInstance(self.user.email, str)
@@ -68,7 +67,10 @@ class TestUser(unittest.TestCase):
     def test_str_method(self):
         """Test string representation of User instance"""
         user_str = str(self.user)
-        self.assertEqual(user_str, "[User] ({}) {}".format(self.user.id, self.user.__dict__))
+        u = self.user.id
+        ud = self.user.__dict__
+        self.assertEqual(user_str, "[User] ({}) {}".format(u, ud))
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -6,6 +6,7 @@ import unittest
 from models.state import State
 from models.base_model import BaseModel
 
+
 class TestState(unittest.TestCase):
     """Test the State class"""
 
@@ -24,6 +25,7 @@ class TestState(unittest.TestCase):
     def test_inheritance(self):
         """Test that State class inherits from BaseModel"""
         self.assertTrue(issubclass(State, BaseModel))
+
 
 if __name__ == '__main__':
     unittest.main()
