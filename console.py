@@ -113,7 +113,8 @@ class HBNBCommand(cmd.Cmd):
                         print(storage.all()[key])
 
     def emptyline(self):
-        return False
+        '''Pass empty line or on enter'''
+        pass 
 
     def do_update(self, args):
         '''
