@@ -190,8 +190,10 @@ if __name__ == "__main__":
 # Target the dict name and deal with it in the else
 # User.all("38f22813-2753-4d42-b37c-57a17f1e4f88"
 # , {'first_name': "John", "age": 89})
-# User.update("b1cf4150-92b5-48c7-9da7-ac23b00d679a", {'first_name': "John", "age": 89})
-# {'if method_name  == "update" and type(eval(args.split(",", 1)[1])) == dicfirst_name': "John", "age": 89}
+# User.update("b1cf4150-92b5-48c7-9da7-ac23b00d679a"
+# , {'first_name': "John", "age": 89})
+# {'if method_name  == "update" and type(eval(args.spli
+# t(",", 1)[1])) == dicfirst_name': "John", "age": 89}
 
     # def default(self, arg):
     #     '''
@@ -209,14 +211,15 @@ if __name__ == "__main__":
     #             if len(args) == 0:
     #                 method_name(class_name)
     #             else:
-    #                 if method_name  == "update" and type(eval(args.split(",", 1)[1])) == dict:
+    #                 if method_name  == "update" and 
+    # type(eval(args.split(",", 1)[1])) == dict:
     #                     data_obj = (args.split(",", 1)[1])
     #                     key = f"{class_name}.{eval(args.split(',', 1)[0])}"
     #                     obj = storage.all()[key]
     #                     for key, value in eval(data_obj).items():
     #                         setattr(obj, key, value)
     #                     print("ELIF")
-                        
+
     #                 else:
     #                     args = args.replace('"', "")
     #                     args = args.replace(" ", "")
@@ -224,7 +227,6 @@ if __name__ == "__main__":
     #                     args = f"{class_name} {eval(args)}"
     #                     method_name(args)
     #                     print("ELSE")
-                        
     #     except Exception:
     #         print("it's me error")
     #         return
