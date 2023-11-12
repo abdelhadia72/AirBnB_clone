@@ -18,7 +18,6 @@ class HBNBCommand(cmd.Cmd):
     intro = "Welcome to Airbnb console. type 'help' for more info."
     prompt = "(hbnb) "
 
-
     def do_EOF(self, arg):
         '''
         Exit command to exit the program
@@ -114,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         '''Pass empty line or on enter'''
-        pass 
+        pass
 
     def do_update(self, args):
         '''
@@ -211,7 +210,7 @@ if __name__ == "__main__":
     #             if len(args) == 0:
     #                 method_name(class_name)
     #             else:
-    #                 if method_name  == "update" and 
+    #                 if method_name  == "update" and
     # type(eval(args.split(",", 1)[1])) == dict:
     #                     data_obj = (args.split(",", 1)[1])
     #                     key = f"{class_name}.{eval(args.split(',', 1)[0])}"
