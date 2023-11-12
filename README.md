@@ -41,7 +41,7 @@ Run the console using:
 |all|create [class name] [id]|
 |update|create [class name] [id] [arg_name] [arg_value]|
 
-### Alternative Command Input
+### Dynamic Command 
 
 |Command|Example|
 |---|---|
