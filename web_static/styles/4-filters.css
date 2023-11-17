@@ -24,9 +24,6 @@
 }
 
 .filters button:hover{
-    opacity: 40%;
+    opacity: 90%;
     
 }
-
-/* center vertically and at 30px of the right border */
-/* change opacity to 90% when the mouse is on the button */
