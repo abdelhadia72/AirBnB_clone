@@ -59,11 +59,11 @@
 }
     
 .filters .locations:hover .popover{
-    opacity: 100%;
+    display: block;
 }
 
 .filters .amenities:hover .popover{
-    opacity: 100%;
+    display: block;
 }
 
 .popover {
@@ -74,8 +74,8 @@
     border: 1px solid #DDDDDD;
     text-align: start;
     padding: 20px;
-    opacity: 0;
-    transition: .2s;
+    display: none;
+    background-color: white;
 }
 
 .popover ul{
