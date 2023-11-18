@@ -13,11 +13,13 @@ body {
     background-color: white;
     width: 1000px;
     margin: 30px auto;
+    padding: 0 10px;
 }
 
 @media (max-width: 932px) {
     .container {
         width: 768px;
+        padding: 0 5px;
     }
 }
 
@@ -25,5 +27,6 @@ body {
 @media (max-width: 768px) {
     .container {
         width: 376px;
+        padding: 0 5px;
     }
 }
