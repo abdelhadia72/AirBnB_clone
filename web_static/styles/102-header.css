@@ -1,0 +1,18 @@
+header {
+    background-color: #ffffff;
+    height: 70px; width: 100%;
+    border-bottom: 1px #CCCCCC solid;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    }
+
+@media (max-width: 768px) {
+    header {
+        justify-content: center;
+        }
+}
+
+.logo {
+    padding-left: 20px;
+}

@@ -7,7 +7,16 @@
     align-items: center;
     position: relative;
     z-index: 999;
+    
+}
 
+
+@media (max-width: 768px) {
+    .filters{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
 }
 
 .filters button {
@@ -25,9 +34,16 @@
     
 }
 
+@media (max-width: 768px) {
+    .filters button{
+        width: 90% !important;
+        margin: auto;
+        margin-top: 20px;
+    }
+}
+
 .filters button:hover{
     opacity: 90%;
-    
 }
 
 .filters .locations, 
@@ -37,6 +53,16 @@
     border: 1px solid #DDDDDD;
     position: relative;
     text-align: center;
+    background-color: white;
+}
+
+
+@media (max-width: 768px) {
+    .filters .locations, 
+    .filters .amenities {
+        width: 49%;
+        margin: auto;
+    }
 }
 
 .filters .amenities{
