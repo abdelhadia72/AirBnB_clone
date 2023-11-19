@@ -85,9 +85,11 @@
     font-weight: normal;
     list-style: none;
 }
+
 .popover ul li{
     margin-bottom: 5px;
 }
+
 .popover div {
     width: 100%;
     height: 25%;
