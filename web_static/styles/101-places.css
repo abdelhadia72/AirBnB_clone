@@ -95,8 +95,8 @@
 
 .places .amenities h2{
     border-top: 1px solid #DDDDDD;
-    text-align: start !important;
-    font-size: 16px !important;
+    text-align: start ;
+    font-size: 16px ;
     padding-top: 10px;
     display: block;
 }
@@ -123,22 +123,22 @@
 
 .places .reviews h2{
     border-bottom: 1px solid #DDDDDD;
-    text-align: start !important;
-    font-size: 16px !important;
+    text-align: start ;
+    font-size: 16px ;
     padding-bottom: 10px;
     display: block;
 }
 
 
 .places .reviews ul{
-    list-style: none !important;
+    list-style: none ;
     font-size: 14px;
     padding: 0px;
     margin: 0px;
 }
 
 .places .reviews ul li{
-    list-style: none !important;
+    list-style: none ;
     font-size: 14px;
     padding: 0px;
     margin: 0px;
