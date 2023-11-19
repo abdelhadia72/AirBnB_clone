@@ -152,3 +152,59 @@
     font-size: 12px;
     margin: 0;
 }
+
+/* icons */
+
+.places .group{
+    height: 70px;
+    width: 50px;
+    background-image: url("/images/icon_group.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.places .bed{
+    height: 70px;
+    width: 50px;
+    background-image: url("/images/icon_bed.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.places .bath{
+    height: 70px;
+    width: 50px;
+    background-image: url("/images/icon_bath.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.places .tv,
+.places .wifi,
+.places .pet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.places .tv::before,
+.places .wifi::before,
+.places .pet::before{
+    content: "";
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    background-image: url("/images/icon_tv.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+}
+
+.places .wifi::before{
+    background-image: url("/images/icon_wifi.png");
+}
+
+.places .pet::before{
+    background-image: url("/images/icon_pets.png");
+}

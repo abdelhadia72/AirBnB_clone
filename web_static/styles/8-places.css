@@ -88,13 +88,28 @@
     margin-bottom: 10px;
 }
 
+/* icons */
 
-/* tag: div
-classname: price_by_night
-same level as the place name
-font color: #FF5A5F
-border: #FF5A5F 4px rounded
-min width: 60px
-height: 60px
-font size: 30px
-align: the top right (with space) */
+.places .group{
+    height: 70px;
+    width: 50px;
+    background-image: url("/images/icon_group.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.places .bed{
+    height: 70px;
+    width: 50px;
+    background-image: url("/images/icon_bed.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.places .bath{
+    height: 70px;
+    width: 50px;
+    background-image: url("/images/icon_bath.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
